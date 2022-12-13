@@ -5,13 +5,14 @@
 <ion-content>
   <ion-list class="container">
     <ion-item *ngFor="let r of restaurants | filter:searchRestaurant">
-      <ion-card align="center" class="card">
-        <ion-grid class="grid-callery" [fixed]="true">
+      <ion-card  class="card center">
+        <ion-grid>
           <ion-row>
-            <ion-col class="center">
+            <ion-col>
+              <ion-card-header>
                 <img class="img" routerLink="/restaurant-card/{{r.id}}"
                   src="http://localhost:8080/images/{{r.filename}}" alt="image" />
-            
+              </ion-card-header>  
             </ion-col>
             <ion-col>
               <ion-card-content class="resp">

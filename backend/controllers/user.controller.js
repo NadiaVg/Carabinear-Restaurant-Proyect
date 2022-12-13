@@ -6,7 +6,7 @@ const  bcrypt  =  require('bcryptjs');
 
 exports.create = (req, res) => {
   //Validate request
-  if (!req.body.password || !req.body.username || !req.body.name || !req.body.CP || !req.body.admin) {
+  if (!req.body.password || !req.body.username) {
     res.status(400).send({
       message: "Content can not be empty!"
     });

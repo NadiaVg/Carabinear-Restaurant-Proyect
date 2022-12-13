@@ -1,0 +1,14 @@
+div {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: rgba(98, 9, 10, 1);
+    border-width: 12px;
+    padding: 5em 5em 5em 5em
+}
+ion-content {
+    --ion-background-color: rgba(222, 199, 209, 1);
+}

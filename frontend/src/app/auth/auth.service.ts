@@ -17,9 +17,9 @@ export class AuthService {
   constructor(private  httpClient:  HttpClient, private  storage:  Storage) { }
 
   private getOptions(user: User){
-    let base64UserAndPassword = window.btoa(user.username + ":" + user.password);
+    let base64EmailAndPassword = window.btoa(user.username + ":" + user.password);
 
-    let basicAccess = 'Basic ' + base64UserAndPassword;
+    let basicAccess = 'Basic ' + base64EmailAndPassword;
 
     let options = {
       headers: {
@@ -34,9 +34,10 @@ export class AuthService {
 
 
   register(user: User): Observable<AuthResponse> {
-    return this.httpClient.post<AuthResponse>(`${this.AUTH_SERVER_ADDRESS}/api/users/`, user, this.getOptions(user)).pipe(
+    //${this.AUTH_SERVER_ADDRESS}
+    console.log(user);
+    return this.httpClient.post<AuthResponse>(`/api/users`, user, this.getOptions(user)).pipe(
       tap(async (res:  AuthResponse ) => {
-
         if (res.user) {
           await this.storage.set("token", res.access_token);
         }
