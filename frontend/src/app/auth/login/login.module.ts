@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { Login1PageRoutingModule } from './login1-routing.module';
+import { LoginPageRoutingModule } from './login-routing.module';
 
-import { Login1Page } from './login1.page';
+import { LoginPage } from './login.page';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from 'src/app/components/components.module';
 
@@ -15,12 +15,12 @@ import { ComponentsModule } from 'src/app/components/components.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    Login1PageRoutingModule,
+    LoginPageRoutingModule,
     HttpClientModule,
     ComponentsModule
   ],
   declarations: [
-    Login1Page
+    LoginPage
   ]
 })
-export class Login1PageModule {}
+export class LoginPageModule {}

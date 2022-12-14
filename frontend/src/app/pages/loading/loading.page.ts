@@ -20,7 +20,7 @@ export class LoadingPage implements OnInit {
 
   redireccionar() {
     timer(1100).pipe(takeWhile(()=>this.alive)).subscribe(_=>{
-      this.router.navigate(['/login1'])
+      this.router.navigate(['/login'])
    })
   }
 

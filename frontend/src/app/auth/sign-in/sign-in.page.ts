@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { User } from '../user';
+import { Storage } from '@ionic/storage-angular';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,14 +14,26 @@ export class SignInPage implements OnInit {
 
 
 
-  constructor(private router: Router, private authService: AuthService) {
+  constructor(private router: Router, private authService: AuthService, private storage: Storage, private alertController: AlertController) {
 
   }
 
 
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.storage.create();
+  }
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'customErrorAlert',
+      header: 'Error',
+      subHeader: 'Faltan datos',
+      message: 'No se ha podido registrar',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
   register(form) {
@@ -33,6 +47,8 @@ export class SignInPage implements OnInit {
     };
     this.authService.register(user).subscribe((res) => {
       this.router.navigateByUrl('home');
+    }, err => {
+      this.presentAlert();
     });
   }
 

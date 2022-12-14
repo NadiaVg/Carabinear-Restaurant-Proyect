@@ -1,8 +1,12 @@
 ion-card{
-    height: 42em;
+    height: fit-content;
     background: rgba(206, 199, 222, 0.5);
     margin-top: 3em;
     
+}
+
+.question{
+    height: 30vh;
 }
 
 .whatsapp{

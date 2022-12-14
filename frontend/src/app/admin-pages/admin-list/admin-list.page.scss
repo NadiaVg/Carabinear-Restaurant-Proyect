@@ -1,37 +1,37 @@
-
-ion-card{
+ion-card {
     // width: fit-content;
     // height: fit-content;
     width: 370px;
     background: rgba(206, 199, 222, 0.5);
     // display: inline-block;
     text-align: center;
-    
+
 }
 
-.item{
+.item {
     position: relative;
 }
 
 
-ion-card-title{
+ion-card-title {
     font-size: 1.2em;
     color: rgba(50, 10, 40, 1);
 }
-.category{
-    font-size: 10%; 
+
+.category {
+    font-size: 10%;
 }
 
-.img{
+.img {
     height: 150px;
     width: 150px;
     border-radius: 10px;
-    
+
 }
 
 
-.center{
-    display:flex;
+.center {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -43,26 +43,26 @@ ion-searchbar.custom {
     --placeholder-color: rgba(81, 23, 48, 1);
     --icon-color: rgba(81, 23, 48, 1);
     --clear-button-color: rgba(81, 23, 48, 1);
-  
-    --border-radius: 50px;
-  }
 
-  ion-icon.star{
+    --border-radius: 50px;
+}
+
+ion-icon.star {
     margin-top: 30%;
     color: gray;
     font-size: 20px;
 }
 
-.button{
+.button {
     padding: 0.5em 3em;
     background: rgba(61, 32, 122, 1);
     color: rgba(255, 246, 253, 1);
     border-radius: 2em;
     font-size: 1em;
-    border:none;
-  }
+    border: none;
+}
 
-  .container {
+.container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -70,14 +70,19 @@ ion-searchbar.custom {
     flex-wrap: wrap;
 }
 
-ion-icon.icon{
+ion-icon.icon {
     font-size: 40px;
 }
 
-ion-icon.delete{
-   color: red;
+ion-icon.delete {
+    color: red;
 }
 
-ion-icon.update{
+ion-icon.update {
     color: rgba(61, 32, 122, 1);
- }
+}
+
+.header {
+    background-color: rgba(255, 246, 253, 1);
+
+}

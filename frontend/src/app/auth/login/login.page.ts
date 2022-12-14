@@ -3,21 +3,27 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from '../auth.service';
 import { User } from '../user';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
-  selector: 'app-login1',
-  templateUrl: './login1.page.html',
-  styleUrls: ['./login1.page.scss'],
+  selector: 'app-login',
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss'],
 })
-export class Login1Page implements OnInit {
+export class LoginPage implements OnInit {
 
-  constructor(    private router: Router, 
-    private authService: AuthService, 
-    private alertController: AlertController) { }
+  user: any = [];
 
-  ngOnInit() {
+  constructor(private router: Router,
+    private authService: AuthService,
+    private alertController: AlertController,
+    private storage: Storage) { }
+
+  async ngOnInit() {
+    await this.storage.create();
   }
-  login(form){
+
+  login(form) {
     let user: User = {
       id: null,
       username: form.value.email,
@@ -26,13 +32,18 @@ export class Login1Page implements OnInit {
       CP: null,
       admin: null
     };
-    this.authService.login(user).subscribe((res)=>{
-      if(!res.access_token) {
+    this.authService.login(user).subscribe((res) => {
+      if (!res.access_token) {
         this.presentAlert("invalid credentials");
         return;
+      } if (user.admin == true) {
+        this.router.navigateByUrl('/admin-list');
+        form.reset();
+      } else {
+        console.log(user.admin)
+        this.router.navigateByUrl('/profile');
+        form.reset();
       }
-      this.router.navigateByUrl('/profile');
-      form.reset();
     }, err => {
       this.presentAlert("Error");
     });
@@ -40,7 +51,7 @@ export class Login1Page implements OnInit {
 
   async presentAlert(message: string) {
     const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
+      cssClass: 'customErrorAlert',
       header: 'Error',
       subHeader: message,
       message: 'Could not login. Try again.',

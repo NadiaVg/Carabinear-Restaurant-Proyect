@@ -5,10 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { MenuComponent } from '../../components/menu/menu.component';
-import { HomeCardComponent } from 'src/app/components/home-card/home-card.component';
 import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
-import { ContactComponent } from 'src/app/components/contact/contact.component';
 import { ComponentsModule } from 'src/app/components/components.module';
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-profile-settings',
@@ -9,14 +10,17 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class ProfileSettingsPage implements OnInit {
 
-  constructor( private authService: AuthService, private router: Router ) { }
+  constructor( private authService: AuthService, private router: Router, private storage: Storage ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+
+    await this.storage.create();
+
   }
 
   logout() {
     this.authService.logout().then(() => {
-      this.router.navigateByUrl("/home");
+      this.router.navigateByUrl("/login");
     });
   }
 
