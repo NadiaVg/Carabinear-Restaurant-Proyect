@@ -1,29 +1,29 @@
 <ion-header class="header">
-  <ion-searchbar class="custom" icon="search-outline" [(ngModel)]="searchRestaurant" showCancelButton="focus" animated
+  <ion-searchbar class="custom" icon="search-outline" [(ngModel)]="searchUser" showCancelButton="focus" animated
     placeholder="Search..."></ion-searchbar>
 </ion-header>
 <ion-content>
   <ion-list class="container">
-    <ion-item *ngFor="let r of restaurants | filter:searchRestaurant" align="center">
+    <ion-item *ngFor="let u of users | filter:searchUser" align="center">
       <ion-card class="card">
         <ion-grid>
           <ion-row>
             <ion-col>
               <ion-card-header>
-                <img class="img" src="http://localhost:8080/images/{{r.filename}}" alt="image" />
+                <img class="img" src="http://localhost:8080/images/{{u.filename}}" alt="image" />
               </ion-card-header>
             </ion-col>
             <ion-col>
               <ion-card-content>
                 <ion-card-title class="ion-text-wrap">
-                  {{ r.name }}
+                  {{ u.name }}
                 </ion-card-title>
                 <ion-card-subtitle class="ion-text-wrap">
-                  {{ r.category }}
+                  {{ u.category }}
                 </ion-card-subtitle>
                 <ion-card-content>
-                  <ion-icon (click)="removeRestaurant(r)" class="icon delete" name="trash-outline"></ion-icon>
-                  <ion-icon routerLink="/update-restaurant/{{r.id}}"  class="icon update" name="create-outline"></ion-icon>
+                  <ion-icon (click)="removeUser(u)" class="icon delete" name="trash-outline"></ion-icon>
+                  <ion-icon routerLink="/update-user/{{u.id}}"  class="icon update" name="create-outline"></ion-icon>
                 </ion-card-content>
               </ion-card-content>
             </ion-col>

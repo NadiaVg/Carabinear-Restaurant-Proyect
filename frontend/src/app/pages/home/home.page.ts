@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Restaurant } from 'src/app/interfaces/restaurant';
+import { RestaurantService } from 'src/app/services/restaurant.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+
+
+  constructor() {
+  
+  }
+
+
+
+
 
 }

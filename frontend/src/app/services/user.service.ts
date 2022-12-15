@@ -32,13 +32,31 @@ export class UserService {
   getUsers(token) {
     let myOptions = this.getOptions(token);
     console.log(myOptions)
-    return this.httpClient.get(`${this.AUTH_SERVER_ADDRESS}/api/users`, myOptions);
+    // return this.httpClient.get(`/api/users`, myOptions);
 
 
-    // return this.httpClient.get(`${this.AUTH_SERVER_ADDRESS}/api/users`, myOptions).pipe(
-    //   tap(function (res) {
-    //       console.log(res);
-    //     })
-    // );
+    return this.httpClient.get(`/api/users`, myOptions).pipe(
+      tap(function (res) {
+          console.log(res);
+        })
+    );
   }
+
+
+  getOneUser(id, token) {
+    let myOptions = this.getOptions(token);
+    console.log(myOptions)
+    // return this.httpClient.get(`/api/users/` + id, myOptions);
+
+
+    return this.httpClient.get(`/api/users/` + id, myOptions).pipe(
+      tap(function (res) {
+          console.log(res);
+        })
+    );
+  }
+  
+
+
+
 }

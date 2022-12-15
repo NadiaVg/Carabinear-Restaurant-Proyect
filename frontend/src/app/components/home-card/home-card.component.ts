@@ -11,33 +11,28 @@ export class HomeCardComponent implements OnInit {
 
   randomNumber;
 
-  restaurant: any = [];
+  restaurants: any = [];
+
+  restaurant: any = []
+
+  ngOnInit(){}
 
   constructor(private restaurantService: RestaurantService) {
 
-    // this.genRandom();
-
     this.getRestaurant();
 
-  }
+  }  
   getRestaurant() {
-    this.restaurantService.getOneRestaurant(10).subscribe(data => {
-      this.restaurant.push(data);
-      console.log(this.restaurant)
+    this.restaurantService.getRestaurants().subscribe(data => {
+      this.restaurants = data;
+      this.restaurant.push(this.restaurants[this.genRandom(this.restaurants.length)]) 
     })
+
   }
 
-  // genRandom() {
-  //   this.randomNumber = Math.floor(Math.random() *1000) + 1;
-  //   while (this.randomNumber != null) {
-  //     this.randomNumber = Math.floor(Math.random()) + 1;
-  //   }
-  //     console.log(this.randomNumber)
- 
-  // }
-
-  ngOnInit() { }
-
-
+  genRandom(num: number) {
+    return Math.floor(Math.random() * num);
+  }
 }
+
 

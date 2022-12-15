@@ -117,7 +117,7 @@ exports.update = (req, res) => {
 };
 
 // Find user by username and password
-exports.findUserByEmailAndPassword = (req, res) => {
+exports.findUserByUsernameAndPassword = (req, res) => {
   const username = req.body.username;
   const pwd = req.body.password;
 
