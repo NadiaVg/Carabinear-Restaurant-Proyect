@@ -107,7 +107,6 @@ export class AddRestaurantPage implements OnInit {
         const response = await fetch(this.capturedPhoto);
         blob = await response.blob();
       }
-
       this.restaurantService.createRestaurant(this.restaurantForm.value, blob).subscribe(data => {
       this.okAlert();
       })

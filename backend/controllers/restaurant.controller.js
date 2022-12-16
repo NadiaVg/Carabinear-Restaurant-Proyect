@@ -1,5 +1,6 @@
 const db = require("../models");
-const Restaurant = db.restaurants;
+const Restaurant = db.restaurant;
+//s?
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Restaurant
@@ -20,6 +21,8 @@ exports.create = (req, res) => {
     filename: req.file ? req.file.filename : ""
   }
 
+  console.log(restaurant)
+
   // Save Restaurant in the database
   Restaurant.create(restaurant).then(data => {
     res.send(data);
@@ -29,6 +32,9 @@ exports.create = (req, res) => {
     })
   });
 }; 
+
+
+
 
 // Retrieve all Restaurants from the database.
 exports.findAll = (req, res) => {

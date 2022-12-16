@@ -1,7 +1,17 @@
+.dishes_icon{
+    width: 2.5em;
+    height: 2.5em;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: rgba(98, 9, 10, 1);
+
+}
 
 ion-card{
-    height: auto;
+    height: fit-content;
     background: rgba(206, 199, 222, 0.5);
+    margin-top: 3em;
     
 }
 
@@ -35,3 +45,8 @@ ion-icon.star{
     font-size: 45px;
 }
 
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

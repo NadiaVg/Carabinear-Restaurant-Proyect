@@ -53,6 +53,7 @@ export class RestaurantService {
 
 
   createRestaurant(restaurant, blob){
+    console.log(restaurant)
     let formData = new FormData();
     formData.append("name", restaurant.name);
     formData.append("direction", restaurant.direction);
@@ -60,7 +61,7 @@ export class RestaurantService {
     formData.append("category", restaurant.category);
     formData.append("file", blob);
 
-    return this.httpClient.post(this.endPoint, formData);
+    return this.httpClient.post(this.endPoint, formData)
   }
 
   deleteRestaurant(id){

@@ -1,4 +1,4 @@
-
+'use strict'
 
 const fs = require('fs');
 const path = require('path');
@@ -35,16 +35,17 @@ Object.keys(db).forEach(modelName => {
 
 
 
-Object.keys(db).forEach(Name => {
-  if (db[Name].associate) {
-    db[Name].associate(db);
-  }
-});
+// Object.keys(db).forEach(Name => {
+//   if (db[Name].associate) {
+//     db[Name].associate(db);
+//   }
+// });
 
   db.Sequelize = Sequelize;
   db.sequelize = sequelize;
 
-  db.restaurants = require("./restaurant.model.js")(sequelize, Sequelize);
-  db.users = require("./user.model.js")(sequelize, Sequelize);
+  // db.restaurants = require("./restaurant.model.js")(sequelize, Sequelize);
+  // db.users = require("./user.model.js")(sequelize, Sequelize);
+  // db.dishes = require("./dish.model.js")(sequelize, Sequelize);
 
   module.exports = db;

@@ -58,9 +58,14 @@ const routes: Routes = [
   {
     path: 'loading',
     loadChildren: () => import('./pages/loading/loading.module').then( m => m.LoadingPageModule)
-  },  {
+  },
+  {
     path: 'users-list',
     loadChildren: () => import('./admin-pages/users-list/users-list.module').then( m => m.UsersListPageModule)
+  },
+  {
+    path: 'dishes/:id',
+    loadChildren: () => import('./pages/dishes/dishes.module').then( m => m.DishesPageModule)
   }
 
 

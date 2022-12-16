@@ -27,6 +27,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // database conection
 const db = require("./models");
 
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
+// });
+
+
 // For explotation. Database is not dropped.
 db.sequelize.sync(); 
 
@@ -67,6 +72,7 @@ app.use(function (req, res, next) {
 
 require("./routes/user.routes")(app);
 require("./routes/restaurant.routes")(app);
+require("./routes/dish.routes")(app);
 
 app.listen(port, () => {
   console.log('Server started on: ' + port);

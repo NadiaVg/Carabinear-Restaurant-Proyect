@@ -21,7 +21,7 @@ module.exports = (sequelize, Sequelize) => {
     filename: {
       type: Sequelize.STRING
     }
-  }, {});
+  });
   // Restaurant.associate = function (models) {
   //   Restaurant.belongToMany(models.User, {
   //     through: 'Valoration',

@@ -1,8 +1,9 @@
-<app-header></app-header>
-<ion-content  class="container">
-  <ion-list class="container-card">
-    <ion-item>
+<ion-content >
+  <app-header></app-header>
+  <ion-list class="container">
+    <ion-item >
       <ion-card class="card" align="center">
+        <ion-icon routerLink="/dishes/{{ restaurants.id }}" class="dishes_icon" name="restaurant-outline"></ion-icon>
               <ion-card-header>
                 <ion-card-title class="ion-text-wrap">
                   {{ restaurants.name }}
@@ -11,7 +12,7 @@
               </ion-card-header>
               <ion-card-content>
                 <ion-card-subtitle class="ion-text-wrap direction">
-                  {{ restaurants.direction }}
+                  {{ restaurants.direction }} , {{ restaurants.CP }}
                 </ion-card-subtitle>
                 <form>
                   <p class="valoration">

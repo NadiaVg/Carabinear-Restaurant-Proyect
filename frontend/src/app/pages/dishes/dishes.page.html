@@ -1,0 +1,18 @@
+<ion-content >
+  <app-header></app-header>
+  <ion-list class="container">
+    <ion-item >
+      <ion-card class="card" align="center">
+              <ion-card-header>
+                <ion-card-title class="ion-text-wrap">
+                  {{ dish.name }}
+                </ion-card-title>
+                <img class="img" src="http://localhost:8080/images/{{dish.filename}}" alt="image" />
+              </ion-card-header>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <app-menu></app-menu>
+</ion-footer>
