@@ -1,6 +1,6 @@
 <em> Carabinear </em>
 
-##Index
+## Index
 
 *[Introduction](#introduction)
 
@@ -20,8 +20,12 @@
 
 *[Technology comparison](#technology-comparison)
 
-*[Planning](#planning
+*[Planning](#planning)
 
 *[Conclusion](#conclusion)
 
-[] listo
+## Introduction
+
+_Personally I feel some interest towards gastronomy and in social networks I observe many professionals (and not so professionals) who are dedicated to try restaurants and give their opinion._
+
+
