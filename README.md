@@ -264,4 +264,31 @@ _to start_
 
 ## Technology comparison
 
+![image](https://user-images.githubusercontent.com/114822178/208331786-5fb1b777-1891-4eae-a814-6ab5baa209e1.png)
+
+
+## Planning
+
+_To start with, I used Trello to organize the points to follow for each subject._
+
+![image](https://user-images.githubusercontent.com/114822178/208331864-c6338c2b-445d-4c45-8872-07b35d7313c2.png)
+
+_I have started with the diagrams and use cases and with this I started the prototype._
+
+_As for the programming I started doing the basics of the backend and once I checked that it worked I started the frontend._
+
+_I have organized the terminals in this way for easier use._
+
+![image](https://user-images.githubusercontent.com/114822178/208332034-591ff1b6-6fc4-4cfa-9a80-e9d3f0ab65a2.png)
+
+
+## Conclusion
+
+_With this project I have learned to fend for myself, but also to ask for help, I have never been a person who likes to ask for help, in my case the rubber duck method is essential, but this year I have happened to both sides, mine and that of people who have offered to help me._
+
+_Thanks to this I have learned a lot of programming that I didn't understand before, I have developed code with my knowledge and with the help of others, I have also learned how to use github._
+
+_Compared to last year I think I have improved considerably, before I didn't know how to connect backend with frontend, in fact I didn't understand the difference, and only with this lack of knowledge it was impossible for me to move forward._
+
+_This year I have managed to make a complete application, with its beginner flaws, but an original application to be proud of._
 
