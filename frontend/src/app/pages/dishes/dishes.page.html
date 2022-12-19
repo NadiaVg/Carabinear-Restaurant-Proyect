@@ -1,14 +1,21 @@
 <ion-content >
   <app-header></app-header>
-  <ion-list class="container">
-    <ion-item >
+  <ion-list class="container" >
+    <ion-item class="item">
       <ion-card class="card" align="center">
-              <ion-card-header>
-                <ion-card-title class="ion-text-wrap">
-                  {{ dish.name }}
-                </ion-card-title>
-                <img class="img" src="http://localhost:8080/images/{{dish.filename}}" alt="image" />
-              </ion-card-header>
+        <div class="carouselContainer">
+          <div *ngFor="let d of dishes; let i = index" class="carousel fade">
+  
+            <img class="img" src="http://localhost:8080/images/{{d.filename}}" >
+     
+              <ion-card-title class="ion-text-wrap">
+            {{d.name}}
+          </ion-card-title>
+ 
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
       </ion-card>
     </ion-item>
   </ion-list>

@@ -8,10 +8,10 @@ module.exports = app => {
   router.post("/", users.create);
 
   // Retrieve all User
-  router.get("/", auth.isAuthenticated, users.findAll);
+  router.get("/", users.findAll);
   
   // Retrieve a single User with id
-  router.get("/:id", auth.isAuthenticated, users.findOne);
+  router.get("/:id", users.findOne);
 
   // Update a User with id
   router.put("/:id", auth.isAuthenticated, users.update);

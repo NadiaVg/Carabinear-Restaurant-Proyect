@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { User } from '../auth/user';
-import { Storage } from '@ionic/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,7 @@ export class UserService {
 
   AUTH_SERVER_ADDRESS:  string  =  'http://localhost:8080';
 
-  constructor(private  httpClient:  HttpClient, private  storage:  Storage) { }
+  constructor(private  httpClient:  HttpClient,) { }
 
   private getOptions(token){
 
@@ -54,6 +53,16 @@ export class UserService {
           console.log(res);
         })
     );
+  }
+
+  updateUser(id, user){
+    let data = new FormData();
+
+    data.append("name", user.name);
+    data.append("email", user.email);
+    data.append("CP", user.CP);
+
+    return this.httpClient.put(this.AUTH_SERVER_ADDRESS + '/' + id, data)
   }
   
 

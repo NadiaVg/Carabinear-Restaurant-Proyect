@@ -22,6 +22,8 @@ exports.create = (req, res) => {
     admin: req.body.admin ? req.body.admin : false
   };
 
+  console.log(user)
+
   User.findOne({ where: { username: user.username } })
     .then(data => {
       if (data) {
@@ -94,6 +96,12 @@ exports.findOne = (req, res) => {
 // Update a User by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
+
+  console.log(req.body.CP)
+  console.log(req.body.name)
+
+  console.log(req.body.username)
+
 
   User.update(req.body, {
     where: { id: id }

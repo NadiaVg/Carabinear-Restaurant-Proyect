@@ -1,5 +1,5 @@
 const db = require("../models");
-const Dish = db.dishes;
+const Dish = db.dish;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Dish
@@ -17,6 +17,8 @@ exports.create = (req, res) => {
     restaurantId: req.body.restaurantId,
     filename: req.file ? req.file.filename : ""
   }
+
+  console.log(dish);
 
   // Save Dish in the database
   Dish.create(dish).then(data => {
@@ -104,8 +106,9 @@ exports.update = (req, res) => {
 
 exports.findAllByRestaurantId = (req, res) => {
   const id = req.params.id;
+  console.log(req.params.id)
 
-  Motorbike.findAll({ where: { restaurantId: id } })
+  Dish.findAll({ where: { restaurantId: id } })
       .then(data => {
           res.send(data);
       })

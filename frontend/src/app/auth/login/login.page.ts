@@ -4,6 +4,7 @@ import { AlertController } from '@ionic/angular';
 import { AuthService } from '../auth.service';
 import { User } from '../user';
 import { Storage } from '@ionic/storage-angular';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginPage implements OnInit {
   constructor(private router: Router,
     private authService: AuthService,
     private alertController: AlertController,
-    private storage: Storage) { }
+    private storage: Storage,
+    private tokenService: TokenService) { }
 
   async ngOnInit() {
     await this.storage.create();
@@ -37,9 +39,17 @@ export class LoginPage implements OnInit {
         this.presentAlert("invalid credentials");
         return;
       } if (user.admin == true) {
+        this.tokenService.setToken(res.access_token)
+        this.tokenService.saveUser(res.user)
+        console.log(res.user)
+        console.log(res.access_token)
         this.router.navigateByUrl('/admin-list');
         form.reset();
       } else {
+        this.tokenService.setToken(res.access_token)
+        this.tokenService.saveUser(res.user)
+        console.log(res.user)
+        console.log(res.access_token)
         console.log(user.admin)
         this.router.navigateByUrl('/profile');
         form.reset();

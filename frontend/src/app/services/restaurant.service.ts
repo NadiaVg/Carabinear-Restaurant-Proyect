@@ -40,7 +40,7 @@ export class RestaurantService {
   } 
   
   getRestaurants(){
-    return this.httpClient.get(this.endPoint)
+    return this.httpClient.get<Restaurant[]>(this.endPoint)
   }
 
   getOneRestaurant(id: number) {

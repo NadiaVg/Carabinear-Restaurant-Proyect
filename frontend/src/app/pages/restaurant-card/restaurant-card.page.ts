@@ -20,17 +20,21 @@ export class RestaurantCardPage implements OnInit {
     private photoService: PhotoService,
     private router: Router) 
     { 
-    this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    
   }
 
   ngOnInit() {
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
     this.fetchRestaurant(this.id);
   }
 
   fetchRestaurant(id) {
     this.restaurantService.getOneRestaurant(this.id).subscribe((restaurants => {
       this.restaurants = restaurants;
+      
     }))
   }
+
+  
 
 }

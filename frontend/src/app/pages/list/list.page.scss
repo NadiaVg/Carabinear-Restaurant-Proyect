@@ -5,6 +5,7 @@ ion-card {
     background: rgba(206, 199, 222, 0.5);
     // display: inline-block;
     text-align: center;
+    display: flex;
 
 }
 
@@ -23,10 +24,14 @@ ion-card-title {
 }
 
 .img {
-    height: 140px;
-    width: 140px;
+    height: 120px;
+    width: 120px;
     border-radius: 10px;
 
+}
+
+ion-col{
+    width: 30%;
 }
 
 
@@ -54,7 +59,8 @@ ion-icon.star {
 }
 
 .button {
-    padding: 0.5em 3em;
+    padding: 0.5em 1em;
+    width: 100%;
     background: rgba(61, 32, 122, 1);
     color: rgba(255, 246, 253, 1);
     border-radius: 2em;

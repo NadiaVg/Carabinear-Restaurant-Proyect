@@ -17,37 +17,54 @@
       <img class="img" src="./assets/img/profile_example.png" alt="image" />
     </ion-card-content>
     <ion-card-content>
-      <div>
+
+      <form [formGroup]="userForm" (ngSubmit)="submitForm()" >
+
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">Name is required.</span>
+        <ion-item lines="full">
+          <ion-label position="floating">Name</ion-label>
+          <ion-input class="input" formControlName="name" type="text" required></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.CP.errors?.required">CP is
+          required.</span>
+        <ion-item lines="full">
+          <ion-label position="floating">CP</ion-label>
+          <ion-input class="input" formControlName="CP" type="number" required></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">Email is
+          required.</span>
+        <ion-item lines="full">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input class="input" formControlName="email" type="text" required></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" class="submitButton" expand="block">Submit</ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+
+      <!-- <div>
         <h2 class="name"> Cambiar nombre </h2>
         <ion-item>
-          <ion-input class="input" name="name" type="text" placeholder="Nadia Vega" ngModel required></ion-input>
+          <ion-input class="input" name="name" type="text" ngModel required></ion-input>
         </ion-item>
-        <ion-card-content align="center">
-          <app-button title="Confirmar"></app-button>
-        </ion-card-content>
       </div>
       <div>
         <h2 class="name"> Cambiar CP </h2>
         <ion-item>
-          <ion-input class="input" name="name" type="text" placeholder="35013" ngModel required></ion-input>
+          <ion-input class="input" name="CP" type="number" ngModel required></ion-input>
         </ion-item>
-        <ion-card-content align="center">
-          <app-button title="Confirmar"></app-button>
-        </ion-card-content>
       </div>
       <div class="email">
-        <h2> Email anterior </h2>
+        <h2> Email</h2>
         <ion-item>
-          <ion-input class="input" name="old_email" type="email" placeholder="your@email.com" ngModel required></ion-input>
-        </ion-item>
-        <h2> Email nuevo </h2>
-        <ion-item>
-          <ion-input class="input" name="new_email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+          <ion-input class="input" name="email" type="email" ngModel required></ion-input>
         </ion-item>
         <ion-card-content align="center">
           <app-button title="Confirmar"></app-button>
         </ion-card-content>
-      </div>
+      </div> -->
     </ion-card-content>
 
   </ion-card>

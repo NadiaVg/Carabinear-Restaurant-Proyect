@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Storage } from '@ionic/storage';
+import { TokenService } from 'src/app/services/token.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -15,20 +17,19 @@ export class ProfilePage implements OnInit {
 
   constructor(private userService: UserService,
     private activatedRoute: ActivatedRoute,
-    public formBuilder: FormBuilder) {this.id = this.activatedRoute.snapshot.paramMap.get('id');}
+    public formBuilder: FormBuilder,
+    private storage: Storage,
+    private tokenService: TokenService) {}
 
-  ngOnInit() {
+  async ngOnInit() {
 
-    this.fetchUser(this.id)
+  this.users = this.tokenService.getUser()
+  console.log(this.users)
+    
    
   }
 
-  fetchUser(id){
-    this.userService.getUsers(this.id).subscribe((users => {
-      this.users = users;
-      console.log(users)
-    }))
-  }
+ 
 
   
 }

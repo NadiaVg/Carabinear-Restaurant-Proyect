@@ -13,7 +13,7 @@ export class HomeCardComponent implements OnInit {
 
   restaurants: any = [];
 
-  restaurant: any = []
+  restaurant: any = [];
 
   ngOnInit(){}
 
@@ -32,6 +32,10 @@ export class HomeCardComponent implements OnInit {
 
   genRandom(num: number) {
     return Math.floor(Math.random() * num);
+  }
+
+  reload(){
+    window.location.reload();
   }
 }
 

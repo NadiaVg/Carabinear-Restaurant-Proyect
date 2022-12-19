@@ -1,6 +1,6 @@
 <div class="container">
-        <ion-img id="rightButton" src="/assets/buttons/botonDcha.png"></ion-img>
-        <ion-img id="leftButton" src="/assets/buttons/botonIzda.png"></ion-img>
+        <ion-img (click)="reload()" id="rightButton" src="/assets/buttons/botonDcha.png"></ion-img>
+        <ion-img (click)="reload()"  id="leftButton" src="/assets/buttons/botonIzda.png"></ion-img>
   <div class="item">
     <ion-card *ngFor="let r of restaurant">
       <ion-card-header>

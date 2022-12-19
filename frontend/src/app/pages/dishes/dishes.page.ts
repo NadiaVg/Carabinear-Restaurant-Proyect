@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Dish } from 'src/app/interfaces/dish';
 import { DishService } from 'src/app/services/dish.service';
-import { PhotoService } from 'src/app/services/photo.service';
+import { LoadScriptService } from 'src/app/services/load-script.service';
 
 @Component({
   selector: 'app-dishes',
@@ -11,24 +11,21 @@ import { PhotoService } from 'src/app/services/photo.service';
 })
 export class DishesPage implements OnInit {
 
-  dish: any = [];
+  dishes: Dish[];
   id: any;
 
   constructor(private dishService: DishService,
     private activatedRoute: ActivatedRoute,
-    public formBuilder: FormBuilder,
-    private photoService: PhotoService,
-    private router: Router) {
-    this.id = this.activatedRoute.snapshot.paramMap.get('id');
-
+    private name: LoadScriptService) {
+    this.name.Load(["slider"]);
   }
 
   ngOnInit() {
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.dishService.getDishesByRestaurantId(this.id).subscribe((dishes) => {
+      this.dishes = dishes;
+    })
   }
 
-  fetchDishes() {
-    this.dish
-
-  }
 
 }
