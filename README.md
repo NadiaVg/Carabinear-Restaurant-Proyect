@@ -99,11 +99,11 @@ _This project is a personal idea, but elaborated with a view to "The Wise Dreams
 
 ##### User-Restaurant(many-to-many):
 
-    _Several users rate several restaurants_
+_Several users rate several restaurants_
     
 ##### Restaurant_Dish(one-to-many):
 
-    _One restaurant has several dishes_
+_One restaurant has several dishes_
     
 ## User requirements
 
@@ -199,7 +199,7 @@ _CPU: Intel core i3, AMD Ryzen 4_
 
 https://www.figma.com/file/eRHzMXWXHjJNGHKYmk7mWK/ProyectoEmpresa?t=2lL4mlxGv7QGp0RY-1
 
- #### Usabilidad : 
+ #### Usability : 
  
    _Eye-catching and simple design_
    
@@ -209,7 +209,7 @@ https://www.figma.com/file/eRHzMXWXHjJNGHKYmk7mWK/ProyectoEmpresa?t=2lL4mlxGv7QG
    
    _Customization_ ![image](https://img.shields.io/badge/STATUS-IN%20DEVELOPMENT-yellow)
    
-#### Accesibilidad :
+#### Accesibility :
 
    _Low-profile colors_
    
@@ -273,7 +273,14 @@ _to start_
 
 ## Technology comparison
 
+![image](https://img.shields.io/badge/angular-ionic-blue)
+
 ![image](https://user-images.githubusercontent.com/114822178/208331786-5fb1b777-1891-4eae-a814-6ab5baa209e1.png)
+
+![image](https://img.shields.io/badge/django-nodejs-blue)
+
+![image](https://user-images.githubusercontent.com/114822178/208459159-9f93ab5d-2916-48d1-a1fc-f12cb4370e64.png)
+
 
 
 ## Planning
