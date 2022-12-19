@@ -49,14 +49,17 @@ _This project is a personal idea, but elaborated with a view to "The Wise Dreams
 
 ### E/R
 
+![image](https://user-images.githubusercontent.com/114822178/208340680-df39a783-61f8-424d-9e99-5a3056c88a17.png)
+
 
 
 ### UML
 
-
+![image](https://user-images.githubusercontent.com/114822178/208340138-088f4115-9c53-4cbd-9e2f-284a7f6df456.png)
 
 ### Class Diagram
 
+![image](https://user-images.githubusercontent.com/114822178/208341057-ea2f7d89-6310-4cbd-a103-6bb274597ced.png)
 
 
 ### Explanation of the data model
@@ -166,6 +169,9 @@ __R.3 Structure__
     * R.4.3 Validation_
    
 ## Use Case
+
+![CasosDeUso](https://user-images.githubusercontent.com/114822178/208339457-f01f1893-a91e-4377-ba6f-cd6daa21dd05.png)
+
   
   
 ## System performance
