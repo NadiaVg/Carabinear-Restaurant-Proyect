@@ -271,6 +271,11 @@ _to start_
    
 ![image](https://user-images.githubusercontent.com/114822178/208330936-04e1771e-4f45-4b0d-a740-98d8c25da2f4.png)
 
+### ORM 
+
+![image](https://user-images.githubusercontent.com/114822178/208745068-5fa10309-da21-40f3-a1c8-ab34379c6208.png)
+
+
 ## Technology comparison
 
 ![image](https://img.shields.io/badge/angular-ionic-blue)
