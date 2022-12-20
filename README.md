@@ -295,6 +295,19 @@ _One of the main advantages of Node.js is its focus on scalability and performan
 _On the other hand, Django is known for its focus on productivity and simplicity. It provides a complete set of tools and features for web application development, including a robust ORM database, design templates and an administration panel. In addition, Django has a wealth of documentation and resources available to help developers learn and use the framework._
 
 
+### Hybrid aplication
+
+_Ionic is an open source mobile app development platform that enables developers to create mobile apps using web technologies such as HTML, CSS and JavaScript. These apps are known as hybrid apps because they combine elements of native apps and web apps._
+
+_One of the main advantages of hybrid apps is that they can be developed and distributed through mobile app stores, such as Google Play and Apple App Store, just like native apps. However, by using web technologies, hybrid apps can be developed faster and with a smaller development team than native apps, since developers do not have to learn specific programming languages for each mobile platform._
+
+_Another advantage of hybrid apps is that they can be run on different mobile platforms without having to be rewritten for each platform. This means that a hybrid app developed with Ionic can be run on both Android and iOS devices with a single code base._
+
+_Overall, Ionic is a good choice for developers looking to create mobile apps quickly and efficiently using familiar web technologies. It is also a good choice for developers who want to create apps that support multiple mobile platforms without having to rewrite code for each platform._
+
+_In my case, using Ionic is good for me because it is an application designed for mobiles, easy to access and suitable for any mobile device. I am also interested in launching this application in the future, once it is finished, to the mobile Store._
+
+
 
 ## Planning
 
@@ -325,3 +338,14 @@ _This year I have managed to make a complete application, with its beginner flaw
 ## Links
 
 https://documenter.getpostman.com/view/17513635/2s8YzZPeS3
+
+
+https://rosolutions.com.mx/blog/index.php/2018/08/06/como-usar-un-orm-en-node-js/
+
+https://www.npmjs.com/package/ng2-search-filter
+
+https://ionicframework.com/docs/theming/dark-mode
+
+https://reviblog.net/2020/07/03/tutorial-de-ionic-formularios-reactivos/
+
+
