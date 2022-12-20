@@ -29,6 +29,9 @@
 
 * [Conclusion](#conclusion)
 
+* [Links](#links)
+
+
 ## Introduction
 
 ### Why?
@@ -46,14 +49,17 @@ _This project is a personal idea, but elaborated with a view to "The Wise Dreams
 
 ### E/R
 
+![image](https://user-images.githubusercontent.com/114822178/208340680-df39a783-61f8-424d-9e99-5a3056c88a17.png)
+
 
 
 ### UML
 
-
+![image](https://user-images.githubusercontent.com/114822178/208340138-088f4115-9c53-4cbd-9e2f-284a7f6df456.png)
 
 ### Class Diagram
 
+![image](https://user-images.githubusercontent.com/114822178/208341057-ea2f7d89-6310-4cbd-a103-6bb274597ced.png)
 
 
 ### Explanation of the data model
@@ -93,11 +99,11 @@ _This project is a personal idea, but elaborated with a view to "The Wise Dreams
 
 ##### User-Restaurant(many-to-many):
 
-    _Several users rate several restaurants_
+_Several users rate several restaurants_
     
 ##### Restaurant_Dish(one-to-many):
 
-    _One restaurant has several dishes_
+_One restaurant has several dishes_
     
 ## User requirements
 
@@ -163,6 +169,9 @@ __R.3 Structure__
     * R.4.3 Validation_
    
 ## Use Case
+
+![CasosDeUso](https://user-images.githubusercontent.com/114822178/208339457-f01f1893-a91e-4377-ba6f-cd6daa21dd05.png)
+
   
   
 ## System performance
@@ -190,7 +199,7 @@ _CPU: Intel core i3, AMD Ryzen 4_
 
 https://www.figma.com/file/eRHzMXWXHjJNGHKYmk7mWK/ProyectoEmpresa?t=2lL4mlxGv7QGp0RY-1
 
- #### Usabilidad : 
+ #### Usability : 
  
    _Eye-catching and simple design_
    
@@ -200,7 +209,7 @@ https://www.figma.com/file/eRHzMXWXHjJNGHKYmk7mWK/ProyectoEmpresa?t=2lL4mlxGv7QG
    
    _Customization_ ![image](https://img.shields.io/badge/STATUS-IN%20DEVELOPMENT-yellow)
    
-#### Accesibilidad :
+#### Accesibility :
 
    _Low-profile colors_
    
@@ -262,6 +271,57 @@ _to start_
    
 ![image](https://user-images.githubusercontent.com/114822178/208330936-04e1771e-4f45-4b0d-a740-98d8c25da2f4.png)
 
+### ORM 
+
+![image](https://user-images.githubusercontent.com/114822178/208745068-5fa10309-da21-40f3-a1c8-ab34379c6208.png)
+
+
 ## Technology comparison
 
+![image](https://img.shields.io/badge/angular-ionic-blue)
 
+_Ionic is a mobile application framework based on Angular that offers a set of components and tools to facilitate the development of mobile applications for different platforms (Android, iOS, etc.). Angular is a complete web application framework developed by Google. On the other hand, React is a JavaScript library developed by Facebook that is used to build user interfaces._
+
+_One of the main advantages of Ionic is that it allows developers to create mobile apps with a single code base, which significantly reduces the time and effort required to develop and maintain mobile apps for different platforms. In addition, Ionic offers a wide variety of predefined components and templates that can help speed up the process of designing and developing the app's user interface._
+
+_On the other hand, React is known for its focus on efficiency and flexibility. The library uses a component-based architecture that allows developers to build web applications in a scalable and maintainable manner. In addition, React has a large community and a wealth of modules and libraries available that can help speed up web application development._
+
+![image](https://img.shields.io/badge/django-nodejs-blue)
+
+_Node.js is a JavaScript runtime environment that runs on the server side. Django is an open source web application development framework written in Python. While both are suitable for web application development, there are some key differences that may influence the decision to use one or the other._
+
+_One of the main advantages of Node.js is its focus on scalability and performance. Node.js uses an asynchronous, event-driven execution model that can handle thousands of concurrent connections efficiently. In addition, Node.js has a large community and a wealth of modules and libraries available that can help speed up web application development._
+
+_On the other hand, Django is known for its focus on productivity and simplicity. It provides a complete set of tools and features for web application development, including a robust ORM database, design templates and an administration panel. In addition, Django has a wealth of documentation and resources available to help developers learn and use the framework._
+
+
+
+## Planning
+
+_To start with, I used Trello to organize the points to follow for each subject._
+
+![image](https://user-images.githubusercontent.com/114822178/208331864-c6338c2b-445d-4c45-8872-07b35d7313c2.png)
+
+_I have started with the diagrams and use cases and with this I started the prototype._
+
+_As for the programming I started doing the basics of the backend and once I checked that it worked I started the frontend._
+
+_I have organized the terminals in this way for easier use._
+
+![image](https://user-images.githubusercontent.com/114822178/208332034-591ff1b6-6fc4-4cfa-9a80-e9d3f0ab65a2.png)
+
+
+## Conclusion
+
+_With this project I have learned to fend for myself, but also to ask for help, I have never been a person who likes to ask for help, in my case the rubber duck method is essential, but this year I have happened to both sides, mine and that of people who have offered to help me._
+
+_Thanks to this I have learned a lot of programming that I didn't understand before, I have developed code with my knowledge and with the help of others, I have also learned how to use github._
+
+_Compared to last year I think I have improved considerably, before I didn't know how to connect backend with frontend, in fact I didn't understand the difference, and only with this lack of knowledge it was impossible for me to move forward._
+
+_This year I have managed to make a complete application, with its beginner flaws, but an original application to be proud of._
+
+
+## Links
+
+https://documenter.getpostman.com/view/17513635/2s8YzZPeS3
