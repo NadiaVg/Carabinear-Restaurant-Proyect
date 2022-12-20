@@ -1,0 +1,38 @@
+<ion-header class="header">
+  <ion-searchbar class="custom" icon="search-outline" [(ngModel)]="searchDish" showCancelButton="focus" animated
+    placeholder="Search..."></ion-searchbar>
+</ion-header>
+<ion-content>
+  <ion-list class="container">
+    <ion-item *ngFor="let d of dishes | filter:searchDish" align="center">
+      <ion-card class="card">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-card-header>
+                <img class="img" src="http://localhost:8080/images/{{d.filename}}" alt="image" />
+              </ion-card-header>
+            </ion-col>
+            <ion-col>
+              <ion-card-content>
+                <ion-card-title class="ion-text-wrap">
+                  {{ d.name }}
+                </ion-card-title>
+                <ion-card-subtitle class="ion-text-wrap">
+                  {{ d.category }}
+                </ion-card-subtitle>
+                <ion-card-content>
+                  <ion-icon (click)="removeDish(d)" class="icon delete" name="trash-outline"></ion-icon>
+                  <ion-icon routerLink="/update-dish/{{d.id}}"  class="icon update" name="create-outline"></ion-icon>
+                </ion-card-content>
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <app-admin-menu-dishes></app-admin-menu-dishes>
+</ion-footer>
