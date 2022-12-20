@@ -275,11 +275,19 @@ _to start_
 
 ![image](https://img.shields.io/badge/angular-ionic-blue)
 
-![image](https://user-images.githubusercontent.com/114822178/208331786-5fb1b777-1891-4eae-a814-6ab5baa209e1.png)
+_Ionic is a mobile application framework based on Angular that offers a set of components and tools to facilitate the development of mobile applications for different platforms (Android, iOS, etc.). Angular is a complete web application framework developed by Google. On the other hand, React is a JavaScript library developed by Facebook that is used to build user interfaces._
+
+_One of the main advantages of Ionic is that it allows developers to create mobile apps with a single code base, which significantly reduces the time and effort required to develop and maintain mobile apps for different platforms. In addition, Ionic offers a wide variety of predefined components and templates that can help speed up the process of designing and developing the app's user interface._
+
+_On the other hand, React is known for its focus on efficiency and flexibility. The library uses a component-based architecture that allows developers to build web applications in a scalable and maintainable manner. In addition, React has a large community and a wealth of modules and libraries available that can help speed up web application development._
 
 ![image](https://img.shields.io/badge/django-nodejs-blue)
 
-![image](https://user-images.githubusercontent.com/114822178/208459159-9f93ab5d-2916-48d1-a1fc-f12cb4370e64.png)
+_Node.js is a JavaScript runtime environment that runs on the server side. Django is an open source web application development framework written in Python. While both are suitable for web application development, there are some key differences that may influence the decision to use one or the other._
+
+_One of the main advantages of Node.js is its focus on scalability and performance. Node.js uses an asynchronous, event-driven execution model that can handle thousands of concurrent connections efficiently. In addition, Node.js has a large community and a wealth of modules and libraries available that can help speed up web application development._
+
+_On the other hand, Django is known for its focus on productivity and simplicity. It provides a complete set of tools and features for web application development, including a robust ORM database, design templates and an administration panel. In addition, Django has a wealth of documentation and resources available to help developers learn and use the framework._
 
 
 
