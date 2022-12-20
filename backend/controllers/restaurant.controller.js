@@ -6,7 +6,7 @@ const Op = db.Sequelize.Op;
 // Create and Save a new Restaurant
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.name || !req.body.direction || !req.body.CP || !req.body.category){
+  if (!req.body.name || !req.body.direction || !req.body.CP || !req.body.category) {
     res.status(400).send({
       message: "Content cannot be empty!"
     });
@@ -31,7 +31,7 @@ exports.create = (req, res) => {
       message: err.message || "Some error occurred while creating the restaurant"
     })
   });
-}; 
+};
 
 
 
@@ -75,7 +75,7 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
 
   const id = req.params.id;
-  if (!req.body.name || !req.body.direction || !req.body.CP || !req.body.category){
+  if (!req.body.name || !req.body.direction || !req.body.CP || !req.body.category) {
     res.status(400).send({
       message: "Content cannot be empty!"
     });
@@ -89,26 +89,58 @@ exports.update = (req, res) => {
     category: req.body.category,
     filename: req.file ? req.file.filename : ""
   }
-
-  Restaurant.update(restaurant, {
-    where: { id: id }
-  })
-    .then(num => {
-      if (num == 1) {
-        res.send({
-          message: "Restaurant was updated successfully."
-        });
-      } else {
-        res.send({
-          message: `Cannot update Restaurant with id=${id}. Maybe Restaurant was not found!`
-        });
-      }
+  if (restaurant.filename == "") {
+    Restaurant.findByPk(id)
+      .then(data => {
+        if (data) {
+          image = data;
+          restaurant.filename = image.filename;
+          Restaurant.update(restaurant, {
+            where: { id: id }
+          })
+            .then(num => {
+              if (num == 1) {
+                res.send({
+                  message: "Restaurant was updated successfully."
+                });
+              } else {
+                res.send({
+                  message: `Cannot update Restaurant with id=${id}. Maybe Restaurant was not found!`
+                });
+              }
+            })
+            .catch(err => {
+              res.status(500).send({
+                message: "Error updating Restaurant with id=" + id
+              });
+            });
+        } else {
+          res.status(404).send({
+            message: `Cannot find Restaurant with id=${id}.`
+          });
+        }
+      })
+  } else {
+    Restaurant.update(restaurant, {
+      where: { id: id }
     })
-    .catch(err => {
-      res.status(500).send({
-        message: "Error updating Restaurant with id=" + id
+      .then(num => {
+        if (num == 1) {
+          res.send({
+            message: "Restaurant was updated successfully."
+          });
+        } else {
+          res.send({
+            message: `Cannot update Restaurant with id=${id}. Maybe Restaurant was not found!`
+          });
+        }
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: "Error updating Restaurant with id=" + id
+        });
       });
-    });
+  }
 };
 
 // Delete

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { PhotoService } from 'src/app/services/photo.service';
 import { RestaurantService } from 'src/app/services/restaurant.service';
@@ -16,11 +16,16 @@ export class AddRestaurantPage implements OnInit {
   isSubmitted: boolean = false;
   capturedPhoto: string = "";
 
+  restaurants: any = [];
+
+  id: any;
+
   constructor(public formBuilder: FormBuilder,
     private restaurantService: RestaurantService,
     private photoService: PhotoService,
     private alertController: AlertController,
-    private router: Router) { }
+    private router: Router,
+    private activatedRoute: ActivatedRoute,) { }
 
   ionViewWillEnter() {
     this.restaurantForm.reset();
@@ -35,6 +40,16 @@ export class AddRestaurantPage implements OnInit {
       direction: ['', [Validators.required]],
       CP: ['', [Validators.required]]
     })
+
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.fetchRestaurant(this.id);
+  }
+
+  fetchRestaurant(id) {
+    this.restaurantService.getOneRestaurant(this.id).subscribe((restaurants => {
+      this.restaurants = restaurants;
+      
+    }))
   }
 
   get errorControl() {

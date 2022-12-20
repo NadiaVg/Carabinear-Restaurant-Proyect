@@ -66,7 +66,21 @@ const routes: Routes = [
   {
     path: 'dishes/:id',
     loadChildren: () => import('./pages/dishes/dishes.module').then( m => m.DishesPageModule)
+  },
+  {
+    path: 'add-dishes',
+    loadChildren: () => import('./admin-pages/add-dishes/add-dishes.module').then( m => m.AddDishesPageModule)
+  },
+  {
+    path: 'dishes-list/:id',
+    loadChildren: () => import('./admin-pages/dishes-list/dishes-list.module').then( m => m.DishesListPageModule)
+  },
+  {
+    path: 'update-dish/:id',
+    loadChildren: () => import('./admin-pages/update-dish/update-dish.module').then( m => m.UpdateDishPageModule)
   }
+
+
 
 
 

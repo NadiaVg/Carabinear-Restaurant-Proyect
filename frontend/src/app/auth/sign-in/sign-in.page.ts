@@ -45,9 +45,9 @@ export class SignInPage implements OnInit {
       CP: form.value.CP,
       admin: false
     };
-    console.log(user)
+    console.log(form.value)  
     this.authService.register(user).subscribe((res) => {
-      this.router.navigateByUrl('home');
+      this.router.navigateByUrl('/login');
     }, err => {
       this.presentAlert();
     });

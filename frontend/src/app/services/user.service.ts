@@ -1,8 +1,13 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { User } from '../auth/user';
+
+const httpOptionsUsingUrlEncoded = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/x-www-form-urlencoded'})
+}
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +25,9 @@ export class UserService {
     let options = {
       headers: {
         'Authorization' : bearerAccess,
-        // 'Content-Type' : 'application/x-www-form-urlencoded',
+        'Content-Type' : 'application/x-www-form-urlencoded',
       }
-      //, withCredentials: true
+      , withCredentials: true
     };
 
     return options;
@@ -55,14 +60,14 @@ export class UserService {
     );
   }
 
-  updateUser(id, user){
+  updateUser(id, user, token){
+    let myOptions = this.getOptions(token);
     let data = new FormData();
-
     data.append("name", user.name);
     data.append("email", user.email);
     data.append("CP", user.CP);
 
-    return this.httpClient.put(this.AUTH_SERVER_ADDRESS + '/' + id, data)
+    return this.httpClient.put("/api/users" + '/' + id, data, myOptions)
   }
   
 

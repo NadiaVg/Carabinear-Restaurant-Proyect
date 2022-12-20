@@ -15,9 +15,8 @@ export class MenuComponent implements OnInit {
 
   loginOrJustEnter(){
     this.authService.isLoggedIn().then(loggedIn => {
-
       if(loggedIn){
-        this.router.navigateByUrl("/you-are-logged-in");
+        this.router.navigateByUrl("/profile");
         return;
       } 
       this.router.navigateByUrl("/login");

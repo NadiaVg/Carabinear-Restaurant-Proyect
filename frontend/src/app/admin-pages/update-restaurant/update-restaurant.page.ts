@@ -42,7 +42,7 @@ export class UpdateRestaurantPage implements OnInit {
         name: data['name'],
         direction: data['direction'],
         CP: data['CP'],
-        category: data['category'],
+        category: data['category']
       })
     }))
   }

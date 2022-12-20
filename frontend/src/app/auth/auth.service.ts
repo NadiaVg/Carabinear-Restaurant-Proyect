@@ -7,7 +7,6 @@ import { User } from './user';
 import { Storage } from '@ionic/storage';
 import { TokenService } from '../services/token.service';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +24,7 @@ export class AuthService {
     let options = {
       headers: {
         'Authorization' : basicAccess,
-        'Content-Type' : 'application/x-www-form-urlencoded',
+        'Content-Type' : 'application/json',
       }
       , withCredentials: true
     };
@@ -35,7 +34,6 @@ export class AuthService {
 
 
   register(user: User): Observable<AuthResponse> {
-    //${this.AUTH_SERVER_ADDRESS}
     console.log(user);
     return this.httpClient.post<AuthResponse>(`/api/users`, user, this.getOptions(user)).pipe(
       tap(async (res:  AuthResponse ) => {
@@ -65,7 +63,7 @@ export class AuthService {
 
   async isLoggedIn() {
     // return this.authSubject.asObservable();
-    let token = await this.storage.get("token");
+    let token = this.tokenService.getToken();
     if (token){ //Just check if exists. This should be checked with current date
       return true;
     }

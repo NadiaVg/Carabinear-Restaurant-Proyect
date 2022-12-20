@@ -2,7 +2,7 @@
         <ion-img (click)="reload()" id="rightButton" src="/assets/buttons/botonDcha.png"></ion-img>
         <ion-img (click)="reload()"  id="leftButton" src="/assets/buttons/botonIzda.png"></ion-img>
   <div class="item">
-    <ion-card *ngFor="let r of restaurant">
+    <ion-card class="card" *ngFor="let r of restaurant">
       <ion-card-header>
         <ion-card-title align="center">
           {{ r.name }}

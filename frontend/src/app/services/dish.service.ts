@@ -11,7 +11,7 @@ export class DishService {
 
 
   httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'})
+    headers: new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'})
   }
 
   endPoint = "http://localhost:8080/api/dishes"
@@ -31,7 +31,7 @@ export class DishService {
   }
 
   getOneDish(id: number) {
-    return this.httpClient.get(this.endPoint + '/' + id)
+    return this.httpClient.get<Dish>(this.endPoint + '/' + id)
     .pipe(
       tap(_=> console.log(`Dish fetched: ${id}`)),
       catchError(this.handleError<Dish>(`Get Dish id=${id}`))
@@ -61,12 +61,12 @@ export class DishService {
     )
   }
 
-  updateDish(id, dish, blob){
+  updateDish(id, dish, blob, restaurantId){
     let data = new FormData();
 
     data.append("name", dish.name);
     data.append("file", blob);
-    data.append("restaurantId", dish.restaurantId)
+    data.append("restaurantId", restaurantId)
 
     return this.httpClient.put(this.endPoint + '/' + id, data)
   }

@@ -5,7 +5,7 @@ const Op = db.Sequelize.Op;
 // Create and Save a new Dish
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.name){
+  if (!req.body.name) {
     res.status(400).send({
       message: "Content cannot be empty!"
     });
@@ -28,7 +28,7 @@ exports.create = (req, res) => {
       message: err.message || "Some error occurred while creating the dish"
     })
   });
-}; 
+};
 
 // Retrieve all Dishs from the database.
 exports.findAll = (req, res) => {
@@ -69,7 +69,8 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
 
   const id = req.params.id;
-  if (!req.body.name){
+  var image = '';
+  if (!req.body.name) {
     res.status(400).send({
       message: "Content cannot be empty!"
     });
@@ -81,26 +82,60 @@ exports.update = (req, res) => {
     restaurantId: req.body.restaurantId,
     filename: req.file ? req.file.filename : ""
   }
-
-  Dish.update(dish, {
-    where: { id: id }
-  })
-    .then(num => {
-      if (num == 1) {
-        res.send({
-          message: "Dish was updated successfully."
-        });
-      } else {
-        res.send({
-          message: `Cannot update Dish with id=${id}. Maybe Dish was not found!`
-        });
-      }
+  if (dish.filename == "") {
+    Dish.findByPk(id)
+      .then(data => {
+        if (data) {
+          image = data;
+          dish.filename = image.filename;
+          Dish.update(dish, {
+            where: { id: id }
+          })
+            .then(num => {
+              if (num == 1) {
+                res.send({
+                  message: "Dish was updated successfully."
+                });
+              } else {
+                res.send({
+                  message: `Cannot update Dish with id=${id}. Maybe Dish was not found!`
+                });
+              }
+            })
+            .catch(err => {
+              res.status(500).send({
+                message: "Error updating Dish with id=" + id
+              });
+            });
+        } else {
+          res.status(404).send({
+            message: `Cannot find Dish with id=${id}.`
+          });
+        }
+      })
+  } else {
+    Dish.update(dish, {
+      where: { id: id }
     })
-    .catch(err => {
-      res.status(500).send({
-        message: "Error updating Dish with id=" + id
+      .then(num => {
+        if (num == 1) {
+          res.send({
+            message: "Dish was updated successfully."
+          });
+        } else {
+          res.send({
+            message: `Cannot update Dish with id=${id}. Maybe Dish was not found!`
+          });
+        }
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: "Error updating Dish with id=" + id
+        });
       });
-    });
+  }
+
+
 };
 
 
@@ -109,14 +144,14 @@ exports.findAllByRestaurantId = (req, res) => {
   console.log(req.params.id)
 
   Dish.findAll({ where: { restaurantId: id } })
-      .then(data => {
-          res.send(data);
-      })
-      .catch(err => {
-          res.status(500).send({
-              message: err.message || "Some error occurred while retrieving dishes."
-          });
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving dishes."
       });
+    });
 };
 
 // Delete

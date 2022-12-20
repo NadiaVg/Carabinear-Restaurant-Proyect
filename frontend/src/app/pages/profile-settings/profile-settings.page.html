@@ -9,18 +9,19 @@
 
         </ion-col>
         <ion-col align="end" size="3">
-          <ion-icon class="icon" name="moon-outline"></ion-icon>
+              <ion-icon  class="icon" name="moon-outline"></ion-icon>
+              <ion-toggle [ngModel]="darkMode" (ionChange)="darkTheme()"></ion-toggle>
         </ion-col>
+        <ion-col></ion-col>
       </ion-row>
     </ion-grid>
     <ion-card-content align="center">
       <img class="img" src="./assets/img/profile_example.png" alt="image" />
     </ion-card-content>
     <ion-card-content>
-
-      <form [formGroup]="userForm" (ngSubmit)="submitForm()" >
-
-        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">Name is required.</span>
+      <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">Name is
+          required.</span>
         <ion-item lines="full">
           <ion-label position="floating">Name</ion-label>
           <ion-input class="input" formControlName="name" type="text" required></ion-input>
@@ -43,33 +44,8 @@
           </ion-col>
         </ion-row>
       </form>
-
-      <!-- <div>
-        <h2 class="name"> Cambiar nombre </h2>
-        <ion-item>
-          <ion-input class="input" name="name" type="text" ngModel required></ion-input>
-        </ion-item>
-      </div>
-      <div>
-        <h2 class="name"> Cambiar CP </h2>
-        <ion-item>
-          <ion-input class="input" name="CP" type="number" ngModel required></ion-input>
-        </ion-item>
-      </div>
-      <div class="email">
-        <h2> Email</h2>
-        <ion-item>
-          <ion-input class="input" name="email" type="email" ngModel required></ion-input>
-        </ion-item>
-        <ion-card-content align="center">
-          <app-button title="Confirmar"></app-button>
-        </ion-card-content>
-      </div> -->
     </ion-card-content>
-
   </ion-card>
-
-
 </ion-content>
 <footer>
   <app-menu></app-menu>

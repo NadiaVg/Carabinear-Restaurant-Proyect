@@ -38,19 +38,15 @@ export class LoginPage implements OnInit {
       if (!res.access_token) {
         this.presentAlert("invalid credentials");
         return;
-      } if (user.admin == true) {
-        this.tokenService.setToken(res.access_token)
-        this.tokenService.saveUser(res.user)
-        console.log(res.user)
-        console.log(res.access_token)
+      }
+      this.tokenService.setToken(res.access_token)
+      this.tokenService.saveUser(res.user)
+      if (this.tokenService.getUser().admin == true) {
         this.router.navigateByUrl('/admin-list');
         form.reset();
       } else {
         this.tokenService.setToken(res.access_token)
         this.tokenService.saveUser(res.user)
-        console.log(res.user)
-        console.log(res.access_token)
-        console.log(user.admin)
         this.router.navigateByUrl('/profile');
         form.reset();
       }
